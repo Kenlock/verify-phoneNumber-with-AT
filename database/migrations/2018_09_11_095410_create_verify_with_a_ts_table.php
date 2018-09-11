@@ -15,6 +15,9 @@ class CreateVerifyWithATsTable extends Migration
     {
         Schema::create('verify_with_a_ts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('phoneNumber');
+            $table->integer('token');
+            $table->enum('isVerified', ['Yes', 'No']);
             $table->timestamps();
         });
     }
